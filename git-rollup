@@ -1,0 +1,25 @@
+#! /bin/bash
+
+#
+# discard all history -- this breaks all forks!
+#
+
+if [ -z "$*" ]; then
+	echo "git-rollup COMMIT_MESSAGE"
+	echo "Discards all the repository history in the master branch"
+	echo
+	echo "ATTENTION: git-rollup cannot be undone and breaks forks!"
+	exit
+fi
+
+# Create a new temporary branch with all the latest revision
+# Delete the branch master
+# And rename to master the temporary branch 
+
+git checkout --orphan latest_branch \
+	&& git add -A \
+	&& git commit -am "$*" \
+	&& git branch -D master \
+	&& git branch -m master \
+	&& git push -f origin master
+

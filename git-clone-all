@@ -1,0 +1,30 @@
+#! /bin/bash
+#
+# Clone all public repositories of given user
+#
+
+if [ -z "$1" -o "$1" = "-h" -o "$1" = "--help" ]; then
+	echo "git-clone-all USERID [DIRECTORY]"
+	echo " Clones all public repositories into DIRECTORY, or the current directory"
+	exit
+fi
+
+
+# -- CLONE REPOS -- --------------------------------------------------
+
+[ -n "$2" ] && mkdir -p "$2" && pushd "$2"
+if ! $?; then exit; fi
+
+# Get list of repos
+REPOS=`curl https://api.github.com/users/$1/repos?per_page=1000 \
+	| sed -ne 's/^\s*"full_name": "\([^"]*\).*/\1/p'`
+
+if $?; then
+	# Clone
+	for REPO in $REPOS; do
+		git clone git@github.com:$REPO.git
+	done
+fi
+
+[ -n "$2" ] && popd
+
