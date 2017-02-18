@@ -64,6 +64,6 @@ Additional wonderful git tools are available from:
 * [Steve Mao's Awesome Git Addons](https://github.com/stevemao/awesome-git-addons) curated list of git addons.
 
 ## MIT License
-See the LICENSE file for details. 
+Git Powertools is open-source software released under the MIT license. See the LICENSE file for details. 
 
 
