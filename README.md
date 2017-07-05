@@ -42,7 +42,7 @@ Git clone-all creates a local copy of all public Github repositories of a given 
 ### Quick Start
 Download git-clone-all and make it executable by running:
 ~~~bash
-	$  chmod u+x git-clone-all
+$  chmod u+x git-clone-all
 ~~~
 
 To clone all public repositories of a given user:
@@ -51,7 +51,7 @@ To clone all public repositories of a given user:
 
 2. Run:
 ~~~bash
-	$  git clone-all USERID [DIRECTORY]
+$  git clone-all USERID [DIRECTORY]
 ~~~
 Or, move to the target directory and omit DIRECTORY in the command above.
 
