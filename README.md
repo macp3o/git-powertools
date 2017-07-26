@@ -2,11 +2,34 @@
 
 A set of powertools for git.
 
-1. [Git rollup](#1-git-rollup) -- discards the history from the master branch.
-2. [Git clone-all](#2-git-clone-all) -- clones all repositories of a given user.
-3. [Links to additional awesome git tools](#3-links-to-additional-git-tools).
+1. [Git setup](#1-git-setup) -- initialize a repository with remote.
+2. [Git rollup](#2-git-rollup) -- discards the history from the master branch.
+3. [Git clone-all](#3-git-clone-all) -- clones all repositories of a given user.
+4. [Links to additional awesome git tools](#4-links-to-additional-git-tools).
 
-## 1. Git Rollup
+
+## 1. Git Setup
+
+Git setup initializes a local git repository and pushes it to a remote git.
+
+### Quick Start
+Download git-setup and make it executable by running:
+~~~bash
+	$  chmod u+x git-setup
+~~~
+
+To setup a repository, run from within the repository to setup:
+~~~bash
+	$  Run git setup REMOTE_REPOSITORY
+~~~
+
+Example of REMOTE_REPOSITORY: `git@github.com:user/repository-name.git`
+
+Git setup configures and commits the repository with message `initial commit`.
+Subsequent commits to the remote repository can be pushed with `git push`.
+
+
+## 2. Git Rollup
 
 Git rollup discards all the history from the `master` branch.
 
@@ -58,7 +81,7 @@ Or, move to the target directory and omit DIRECTORY in the command above.
 ### Dependencies
 Requires bash, curl, sed, and obviously git.
 
-## 3. Links to Additional Git Tools
+## 4. Links to Additional Git Tools
 Additional wonderful git tools are available from:
 * [TJ's Git Extras](https://github.com/tj/git-extras), and
 * [Steve Mao's Awesome Git Addons](https://github.com/stevemao/awesome-git-addons) curated list of git addons.

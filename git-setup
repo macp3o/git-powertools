@@ -1,0 +1,20 @@
+#! /bin/bash
+
+#
+# initialize and push a repository to remote
+#
+
+if [ -z "$*" ]; then
+	echo "git-setup REMOTE_REPOSITORY"
+	echo "Initializes and pushes a repository to remote"
+	echo
+	echo "Example of REMOTE_REPOSITORY: git@github.com:user/repository-name.git"
+	exit
+fi
+
+git init \
+	&& git add . \
+	&& git commit -m "initial commit ' \
+	&& git remote add otigin "$1" \
+	&& git push --set-upstream origin master
+
