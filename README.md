@@ -3,7 +3,7 @@
 A set of powertools for git.
 
 1. [Git setup](#1-git-setup) -- initialize a repository with remote.
-2. [Git rollup](#2-git-rollup) -- discards the history from the master branch.
+2. [Git collapse](#2-git-collapse) -- collapses all the history from the master branch.
 3. [Git clone-all](#3-git-clone-all) -- clones all repositories of a given user.
 4. [Links to additional awesome git tools](#4-links-to-additional-git-tools).
 
@@ -29,34 +29,34 @@ Git setup configures and commits the repository with message `initial commit`.
 Subsequent commits to the remote repository can be pushed with `git push`.
 
 
-## 2. Git Rollup
+## 2. Git Collapse
 
-Git rollup discards all the history from the `master` branch.
+Git collapse discards all the history from the `master` branch.
 
 ### Quick Start
-Download git-rollup and make it executable by running:
+Download git-collapse and make it executable by running:
 ~~~bash
-	$  chmod u+x git-rollup
+	$  chmod u+x git-collapse
 ~~~
 
 To rollup a repository, run from within the repository to rollup:
 ~~~bash
-	$  Run git rollup COMMIT_MESSAGE
+	$  Run git collapse COMMIT_MESSAGE
 ~~~
 
-Git rollup commits the repository files to recreate the `master` branch with only the latest versions, as if it was a brand new repository. Git rollup does not delete or affect other branches (besides `latest_branch` which is used to recreate the `master` branch).
+Git collapse commits the repository files to recreate the `master` branch with only the latest versions, as if it was a brand new repository. Git collapse does not delete or affect other branches (besides `latest_branch` which is used to recreate the `master` branch).
 
 #### Important:
-* **No Undo**: Git rollup cannot be undone!
+* **No Undo**: Git collapse cannot be undone!
 
-* **Broken Forks**: All forks of the repository will stop working after!
+* **Broken Forks**: All forks of the repository will stop working after git collapse!
 
 ### How It Works?
-Git rollup creates a new temporary branch (latest_branch),
+Git collapse creates a new temporary branch (latest_branch),
 and commits the latest revision of all files from the master branch to latest_branch.
 
 Then it deletes the master branch, makes latest-branch the master branch.
-Finally, git rollup forces a push to origin.
+Finally, git collapse forces a push to origin.
 
 ## 2. Git Clone-All
 
