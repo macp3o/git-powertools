@@ -5,10 +5,10 @@
 #
 
 if [ -z "$*" ]; then
-	echo "git-rollup COMMIT_MESSAGE"
-	echo "Discards all the repository history in the master branch"
+	echo "git-collapse COMMIT_MESSAGE"
+	echo "Collapses all the repository history in the master branch"
 	echo
-	echo "ATTENTION: git-rollup cannot be undone and breaks forks!"
+	echo "ATTENTION: git-collapse cannot be undone and breaks forks!"
 	exit
 fi
 
